@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="" />
+      <h1>Memo</h1>
+      <img src="assets/menu.png" alt="" />
+  </header>  
+  <div class="controls">
+        <input id="search" placeholder="Search notes..." />
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="today">Today</option>
+          <option value="week">This week</option>
+        </select>
+  </div>
+  <main class="wrap">
+    <div id="notes" class="list" role="list"></div>
+    <div id="empty" class="empty" hidden>Nothing yet. Hit the green button to add one</div>
+  </main><button id="addBtn" class="fab" title="Add note">+</button>
+
+  <!-- View Dialog -->  
+  <dialog id="viewDlg">
+    <div class="dlg-head">
+      <strong>Note</strong>
+      <button class="x" data-x>×</button>
+    </div>
+    <div class="dlg-body">
+      <div style="display:grid;gap:6px">
+        <div id="vTitle" class="title" style="font-size:18px"></div>
+        <div id="vDate" class="sub"></div>
+        <div id="vDesc" style="white-space:pre-wrap;margin-top:8px"></div>
+      </div>
+    </div>
+    <div class="dlg-actions">
+      <button id="editBtn" class="btn">Edit</button>
+      <button id="delBtn" class="btn warn">Delete</button>
+      <button class="btn" data-x>Close</button>
+    </div>
+  </dialog>  <!-- Add/Edit Dialog -->  
+  <dialog id="formDlg">
+    <form id="noteForm" method="dialog">
+      <div class="dlg-head">
+        <strong id="formTitle">Add note</strong>
+        <button class="x" data-x type="button">×</button>
+      </div>
+      <div class="dlg-body">
+        <div class="row row-2">
+          <div>
+            <label for="title">Title</label>
+            <input id="title" required maxlength="120" placeholder="Short headline" />
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input id="date" type="date" required />
+          </div>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <div>
+            <label for="desc">Description</label>
+            <textarea id="desc" placeholder="Details"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="dlg-actions">
+        <button class="btn" data-x type="button">Cancel</button>
+        <button id="saveBtn" class="btn primary" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+  
+  <menu></menu>
+  <!-- this is comment  -->
+  
+  <script type="module" src="main.js"></script></body>
+</html>
