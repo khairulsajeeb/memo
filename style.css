@@ -37,7 +37,22 @@ h1{font-size:24px;margin:0}
 .sub{font-size:12px;color:var(--muted);margin-top:2px}
 .empty{color:var(--muted);text-align:center;padding:40px 0}
 .fab{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:999px;border:none;background:var(--accent);color:#001b0a;font-weight:700;font-size:28px;cursor:pointer;box-shadow:0 10px 30px rgba(16,185,129,.35)}
-.fab:active{transform:translateY(1px)}dialog{border:none;border-radius:18px;padding:0;background:#0b1220;color:var(--text);box-shadow:0 30px 80px rgba(0,0,0,.6);width:min(680px,92vw)}
+.fab:active{transform:translateY(1px)}
+dialog{
+    border:none;
+    border-radius:18px;
+    padding:0;
+    background:#0b122022;
+    backdrop-filter: blur(5px);
+    color:var(--text);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+    width:min(680px,92vw);
+    border: 1px solid #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 .dlg-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #1f2937}
 .dlg-body{padding:18px}
 .dlg-actions{display:flex;gap:10px;justify-content:flex-end;padding:14px 18px;border-top:1px solid #1f2937}
